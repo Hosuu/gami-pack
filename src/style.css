@@ -1,0 +1,333 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a:link,
+a:visited,
+a:hover {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+:root {
+	font-size: 16px;
+
+	--accent: #ff8000;
+	--secondary: #2b2a29;
+	--background: #747474;
+
+	background-color: #1e1e1e;
+	color: #fff;
+
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: 'slnt' 0;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.flex {
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+}
+
+.no-gap {
+	gap: 0rem;
+}
+
+.no-align {
+	align-items: flex-start;
+}
+
+.spaced {
+	justify-content: space-between;
+}
+
+.even {
+	justify-content: space-around;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.fill {
+	flex: 1;
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+#landing {
+	min-height: 100vh;
+}
+
+section {
+	padding: 64px 0;
+}
+
+.button {
+	display: block;
+	background-color: var(--accent);
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 1rem 1.5rem;
+	border-radius: 24px;
+	border: none;
+	outline: none;
+	text-align: center;
+}
+
+.fs-4,
+.fs-3,
+.fs-2,
+a.active {
+	color: var(--accent);
+}
+
+.fs-4 {
+	font-size: 4rem;
+}
+
+.fs-3 {
+	font-size: 3rem;
+}
+.fs-2 {
+	font-size: 2rem;
+}
+
+footer {
+	background: var(--background);
+}
+
+#navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#navbar,
+#nav-open {
+	background-color: #747474cc;
+	backdrop-filter: blur(10px);
+	z-index: 999;
+}
+
+.navbar {
+	padding: 8px;
+	color: var(--secondary);
+	font-size: 1.5rem;
+}
+
+#stats {
+	font-size: 2rem;
+}
+
+.image-container {
+	overflow: hidden;
+	max-height: 100%;
+}
+
+.image-container > img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.hero-text {
+	margin-top: 8px;
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+footer a.active {
+	color: #fff;
+}
+
+footer {
+	padding: 32px 0;
+	color: var(--secondary);
+}
+
+nav > ul {
+	list-style: none;
+}
+
+.rounded {
+	border-radius: 32px;
+}
+
+#landing-img {
+	position: relative;
+}
+
+#landing-img::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -25px;
+	right: -25px;
+	width: 50%;
+	height: 50%;
+	background: var(--accent);
+	border-radius: 32px;
+	z-index: -1;
+}
+
+#landing-img::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -25px;
+	left: -25px;
+	width: 64px;
+	height: 64px;
+	background: var(--accent);
+	border-radius: 32px;
+}
+
+.cards {
+	align-self: normal;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.card > .label {
+	gap: 1rem;
+	font-size: 2rem;
+}
+
+.card > p {
+	max-width: 350px;
+	text-align: justify;
+}
+
+input,
+textarea {
+	font-family: inherit;
+	border: none;
+	outline: none;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+.form-field {
+	padding: 0.5rem;
+	background: #808080;
+	border-radius: 0.5rem;
+}
+
+.form-field::placeholder {
+	color: rgb(43, 42, 41, 80%);
+}
+
+.form-field input[type='checkbox'] {
+	width: 200%;
+}
+
+form .button {
+	padding: 0.5rem 1rem;
+}
+
+.form-agreements {
+	text-align: justify;
+	font-size: 0.75rem;
+}
+
+.gmaps {
+	width: 100%;
+	height: 500px;
+	margin-bottom: 4rem;
+	border: none;
+}
+
+#nav-open {
+	position: absolute;
+	right: 100%;
+	top: 10%;
+	padding: 1rem;
+	border-radius: 1rem 0 0 1rem;
+}
+
+@media screen and (max-width: 900px) {
+	#landing-img {
+		display: none;
+	}
+
+	#about-us,
+	#stats,
+	#contact-us {
+		flex-direction: column;
+	}
+
+	#stats {
+		gap: 4rem;
+	}
+}
+
+#nav-close {
+	display: none;
+}
+
+@media screen and (max-width: 640px) {
+	#navbar {
+		bottom: 0;
+		translate: 100%;
+	}
+
+	#navbar nav {
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-around;
+		gap: 1rem;
+	}
+
+	#navbar nav a {
+		flex: 1;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#navbar.animate {
+		transition: translate 0.25s ease;
+	}
+
+	#navbar[open] {
+		translate: 0%;
+	}
+
+	#nav-close {
+		display: block;
+	}
+
+	footer > div {
+		flex-direction: column-reverse;
+	}
+}
