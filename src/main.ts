@@ -57,3 +57,9 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('[animate-number]').forEach((el) => {
 	observer.observe(el)
 })
+
+document.addEventListener('scroll', function () {
+	const scrollPosition = scrollY
+	const screenRatio = innerWidth / innerHeight
+	document.body.style.backgroundPositionY = -scrollPosition * 0.2 * screenRatio + 'px'
+})
