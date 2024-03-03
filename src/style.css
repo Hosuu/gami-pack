@@ -150,16 +150,44 @@ header a.active {
 	font-size: 2rem;
 }
 
+.img-decoration-container {
+	position: relative;
+}
+
 .image-container {
 	overflow: hidden;
 	max-height: 100%;
 }
 
 .image-container > img {
+	position: relative;
+	z-index: 1;
 	width: 100%;
 	height: auto;
 	display: block;
 	margin: 0 auto;
+}
+
+.img-rect {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background: var(--accent);
+	border-radius: 32px;
+	z-index: 0;
+}
+
+.img-dot {
+	width: fit-content;
+	display: grid;
+	place-content: center;
+	padding: 8px;
+	border-radius: 50%;
+	text-align: center;
+	aspect-ratio: 1/1;
+	background: var(--accent);
+	position: absolute;
+	z-index: 2;
 }
 
 .hero-text {
@@ -183,37 +211,6 @@ nav > ul {
 
 #landing-img {
 	position: relative;
-}
-
-#landing-img::before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: -25px;
-	right: -25px;
-	width: 50%;
-	height: 50%;
-	background: var(--accent);
-	border-radius: 32px;
-	z-index: 0;
-}
-
-#landing-img::after {
-	content: '';
-	display: block;
-	position: absolute;
-	bottom: -25px;
-	left: -25px;
-	width: 64px;
-	height: 64px;
-	background: var(--accent);
-	border-radius: 32px;
-	z-index: 2;
-}
-
-#landing-img img {
-	position: relative;
-	z-index: 1;
 }
 
 .cards {
@@ -290,6 +287,10 @@ form .button {
 	border-radius: 1rem 0 0 1rem;
 }
 
+#nav-close {
+	display: none;
+}
+
 @media screen and (max-width: 900px) {
 	#landing-img {
 		display: none;
@@ -312,10 +313,6 @@ form .button {
 	footer .image-container {
 		max-width: 300px;
 	}
-}
-
-#nav-close {
-	display: none;
 }
 
 @media screen and (max-width: 640px) {
