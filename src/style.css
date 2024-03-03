@@ -136,8 +136,7 @@ header a.active {
 	backdrop-filter: blur(10px);
 }
 #navbar,
-#nav-open,
-footer {
+#nav-open {
 	z-index: 999;
 }
 
