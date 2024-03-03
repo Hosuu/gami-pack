@@ -209,10 +209,6 @@ nav > ul {
 	list-style: none;
 }
 
-#landing-img {
-	position: relative;
-}
-
 .cards {
 	align-self: normal;
 	gap: 1rem;
@@ -298,8 +294,13 @@ form .button {
 
 	#about-us,
 	#stats,
-	#contact-us {
+	#contact-us,
+	#mission {
 		flex-direction: column;
+	}
+
+	#vision {
+		flex-direction: column-reverse;
 	}
 
 	#stats {
