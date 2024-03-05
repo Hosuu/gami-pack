@@ -13,46 +13,74 @@
 		<title>Gami-Pack - Oferta</title>
 	</head>
 	<body>
-		<header id="navbar" class="container-bg">
-			<div id="nav-open" class="container-bg">Ikonka</div>
-			<nav class="flex even container navbar">
-				<a href="/">Strona główna</a>
-				<a href="offer" class="active">Oferta</a>
-				<a href="about-us">O nas</a>
-				<a href="contact">Kontakt</a>
-				<div id="nav-close" class="button">X</div>
-			</nav>
-		</header>
-		<section class="container flex column fill" style="margin-top: 4rem">
+		<header id="navbar" class="container-bg"></header>
+
+		<section class="container flex column fill">
 			<div class="fs-4">Oferta</div>
 		</section>
-		<footer class="container-bg">
-			<div class="flex container">
-				<div class="image-container">
-					<img src="LOGO.png" alt="" />
-				</div>
 
-				<div class="flex even" style="width: 100%">
-					<nav class="flex column no-gap no-align even" style="align-self: stretch">
-						<p class="fs-2">Menu</p>
-						<a href="/">Strona główna</a>
-						<a href="offer" class="active">Oferta</a>
-						<a href="about-us">O nas</a>
-						<a href="contact">Kontakt</a>
-					</nav>
-					<div class="flex column" style="gap: 0.5rem; align-items: flex-start">
-						<p class="fs-2">Adres</p>
-						<p>
-							ul. Poniatowskiego 2,<br />
-							41-253 Czeladź
-						</p>
-						<p class="fs-2">Kontakt</p>
-						<a href="mailto:biuro@gami-pack.pl">biuro@gami-pack.pl</a>
-						<a href="tel:+48666053734">Tel. 666 053 734</a>
+		<section id="offer-info" class="flex container full-width">
+			<div class="flex column fill" style="gap: 0.5rem; align-items: flex-start">
+				<p>
+					Nasze szesnastoletnie doświadczenie pozwoliło nam na rozwój dzięki któremu
+					jesteśmy w stanie zaspokoić potrzeby naszych klientów. Oferujemy opakowania z
+					tektury 7-warstwowej, 5-warstwowej i 3-warstwowej, dostosowane do różnorodnych
+					potrzeb. Nasza tektura to gwarancja ochrony, niezależnie od tego, czy przesyłasz
+					delikatne produkty czy coś o większej wadze.
+				</p>
+			</div>
+			<div class="img-decoration-container fill">
+				<div class="image-container rounded">
+					<img src="placeholder.png" alt="" />
+				</div>
+				<div class="img-dot" style="top: 12%; left: -8%; width: 5%"></div>
+				<div class="img-dot" style="top: 35%; left: 70%; height: 120%; z-index: 0"></div>
+				<div class="img-dot" style="bottom: -10%; left: -5%; width: 15%"></div>
+			</div>
+		</section>
+
+		<section id="offer" class="flex container even full-width">
+			<div class="flex column offer-card">
+				<div class="fs-15">Opakowania standardowe</div>
+				<div class="img-decoration-container">
+					<div class="image-container rounded">
+						<img src="kartony/standardowe.jpg" alt="" />
 					</div>
 				</div>
+				<a href="#" class="button" style="padding: 0.5rem 1rem">Sprawdź ofertę</a>
 			</div>
-		</footer>
+			<div class="flex column offer-card">
+				<div class="fs-15">Opakowania wielkogabarytowe</div>
+				<div class="img-decoration-container">
+					<div class="image-container rounded">
+						<img src="kartony/wielkogabarytowe.jpg" alt="" />
+					</div>
+				</div>
+				<a href="#" class="button" style="padding: 0.5rem 1rem">Sprawdź ofertę</a>
+			</div>
+		</section>
+		<section id="offer" class="flex container even full-width">
+			<div class="flex column offer-card">
+				<div class="fs-15">Opakowania specjalistyczne</div>
+				<div class="img-decoration-container">
+					<div class="image-container rounded">
+						<img src="kartony/specjalistyczne.jpg" alt="" />
+					</div>
+				</div>
+				<a href="#" class="button" style="padding: 0.5rem 1rem">Sprawdź ofertę</a>
+			</div>
+			<div class="flex column offer-card">
+				<div class="fs-15">Opakowania e-commerce</div>
+				<div class="img-decoration-container">
+					<div class="image-container rounded">
+						<img src="kartony/e-commerce.jpg" alt="" />
+					</div>
+				</div>
+				<a href="#" class="button" style="padding: 0.5rem 1rem">Sprawdź ofertę</a>
+			</div>
+		</section>
+
+		<footer class="container-bg"></footer>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>

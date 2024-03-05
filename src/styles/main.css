@@ -1,3 +1,5 @@
+@import url('./utility.css');
+
 *,
 *::before,
 *::after {
@@ -31,7 +33,7 @@ a:hover {
 
 body {
 	overflow-x: hidden;
-	background-image: url('/bg.png');
+	background-image: url('/background.png');
 	background-attachment: fixed;
 	background-position-x: center;
 	background-size: cover;
@@ -41,55 +43,6 @@ body {
 }
 
 /* UTLITY CLASSES */
-
-.flex {
-	display: flex;
-	gap: 4rem;
-	align-items: center;
-}
-
-.no-gap {
-	gap: 0rem;
-}
-
-.no-align {
-	align-items: flex-start;
-}
-
-.spaced {
-	justify-content: space-between;
-}
-
-.even {
-	justify-content: space-around;
-}
-
-.column {
-	flex-direction: column;
-}
-
-.fill {
-	flex: 1;
-}
-
-.rounded {
-	border-radius: 32px;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.full-width {
-	width: 100%;
-}
-
-.container {
-	max-width: 1440px;
-	margin: 0 auto;
-	padding-left: 2rem;
-	padding-right: 2rem;
-}
 
 #landing {
 	min-height: 100vh;
@@ -109,19 +62,34 @@ section {
 	border: none;
 	outline: none;
 	text-align: center;
+	transition: scale 0.2s ease;
+}
+
+.button:hover {
+	scale: 1.05;
 }
 
 .fs-4,
 .fs-3,
 .fs-2,
+.fs-15,
 header a.active {
 	color: var(--accent);
 	text-align: center;
 }
-/* prettier-ignore */
-.fs-4 { font-size: 4rem; } /* prettier-ignore */
-.fs-3 { font-size: 3rem; } /* prettier-ignore */
-.fs-2 { font-size: 2rem; }
+
+.fs-4 {
+	font-size: 4rem;
+}
+.fs-3 {
+	font-size: 3rem;
+}
+.fs-2 {
+	font-size: 2rem;
+}
+.fs-15 {
+	font-size: 1.5rem;
+}
 
 #navbar {
 	position: fixed;
@@ -140,6 +108,17 @@ header a.active {
 	z-index: 999;
 }
 
+#nav-open,
+#nav-close {
+	font-size: 1.5rem;
+	border-radius: 50%;
+	padding: 1rem;
+}
+
+#nav-close {
+	font-size: 2rem;
+}
+
 .navbar {
 	padding: 8px;
 	color: var(--secondary);
@@ -154,6 +133,10 @@ header a.active {
 	position: relative;
 }
 
+.img-decoration-container > :not(.image-container) {
+	translate: var(--origin, -50% -50%);
+}
+
 .image-container {
 	overflow: hidden;
 	max-height: 100%;
@@ -166,6 +149,13 @@ header a.active {
 	height: auto;
 	display: block;
 	margin: 0 auto;
+
+	transform-origin: var(--origin-scale, 50% 50%);
+	transition: scale 0.25s ease-out;
+}
+
+.img-decoration-container .image-container:hover > img {
+	scale: 1.1;
 }
 
 .img-rect {
@@ -175,6 +165,11 @@ header a.active {
 	background: var(--accent);
 	border-radius: 32px;
 	z-index: 0;
+}
+
+.offer-card {
+	gap: 1rem;
+	max-width: 400px;
 }
 
 .img-dot {
@@ -295,8 +290,13 @@ form .button {
 	#about-us,
 	#stats,
 	#contact-us,
-	#mission {
+	#mission,
+	#offer {
 		flex-direction: column;
+	}
+
+	#offer {
+		gap: 8rem;
 	}
 
 	#vision {
@@ -316,7 +316,15 @@ form .button {
 	}
 }
 
+section:first-of-type:not(#landing) {
+	margin-top: 2rem;
+}
+
 @media screen and (max-width: 640px) {
+	section:first-of-type:not(#landing) {
+		margin-top: 0;
+	}
+
 	#navbar {
 		bottom: 0;
 		translate: 100%;
