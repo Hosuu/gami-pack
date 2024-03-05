@@ -21,20 +21,45 @@ createIcons({
 	},
 })
 
+const animateInObserver = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.setAttribute('animating', '')
+				entry.target.addEventListener('animationend', () => {
+					entry.target.removeAttribute('animate-in')
+					entry.target.removeAttribute('animating')
+				})
+				animateInObserver.unobserve(entry.target)
+			}
+		})
+	},
+	{ threshold: 0.5 }
+)
+
+document.querySelectorAll('[animate-in]').forEach((el) => animateInObserver.observe(el))
+
+function clamp(min: number, value: number, max: number): number {
+	if (value < min) return min
+	if (value > max) return max
+	return value
+}
+
 function initImgHoverMovement(): void {
+	addEventListener('mousemove', (e) => {
+		const mouseX = (e.x / innerWidth) * 2 - 1
+		const mouseY = (e.y / innerHeight) * 2 - 1
+		document.body.style.setProperty('--mouseX', clamp(-1, mouseX, 1).toString())
+		document.body.style.setProperty('--mouseY', clamp(-1, mouseY, 1).toString())
+	})
+
 	document.querySelectorAll<HTMLDivElement>('.img-decoration-container').forEach((container) => {
-		const boundingRect = container.getBoundingClientRect()
+		const { x, y, width, height } = container.getBoundingClientRect()
 		container.addEventListener('mousemove', (e) => {
-			const MOVE_FACTOR = 0.1
-			const SCALE_FACTOR = 0.5
-			const x = Math.max(e.x - boundingRect.x, 0) / boundingRect.width
-			const y = Math.max(e.y - boundingRect.y, 0) / boundingRect.height
-			const originX = -0.5 * (1 + (x - 0.5) * MOVE_FACTOR) * 100
-			const originY = -0.5 * (1 + (y - 0.5) * MOVE_FACTOR) * 100
-			const originScaleX = 0.5 * (1 + (x - 0.5) * SCALE_FACTOR) * 100
-			const originScaleY = 0.5 * (1 + (y - 0.5) * SCALE_FACTOR) * 100
-			container.style.setProperty('--origin', `${originX}% ${originY}%`)
-			container.style.setProperty('--origin-scale', `${originScaleX}% ${originScaleY}%`)
+			const mouseX = ((e.x - x) / width) * 2 - 1
+			const mouseY = ((e.y - y) / height) * 2 - 1
+			container.style.setProperty('--localMouseX', clamp(-1, mouseX, 1).toString())
+			container.style.setProperty('--localMouseY', clamp(-1, mouseY, 1).toString())
 		})
 	})
 }

@@ -1,0 +1,52 @@
+.img-decoration-container {
+	position: relative;
+}
+
+.img-decoration-container .image-container > img {
+	transition: scale 0.35s ease-out;
+	transform-origin: calc(50% + 10% * var(--localMouseX, 0))
+		calc(50% + 10% * var(--localMouseY, 0));
+}
+
+.img-decoration-container .image-container:hover > img {
+	scale: 1.05;
+}
+
+.img-decoration-container > :not(.image-container) {
+	position: absolute;
+	background-color: var(--accent);
+
+	display: grid;
+	place-content: center;
+	text-align: center;
+	padding: 8px;
+
+	will-change: top, left;
+	top: calc(var(--posY, 50%) + var(--moveY, 1%) * var(--mouseY, 0) * var(--sign, 1));
+	left: calc(var(--posX, 50%) + var(--moveX, 1%) * var(--mouseX, 0) * var(--sign, 1));
+
+	translate: -50% -50%;
+}
+
+.img-decoration-container > .local:not(.image-container) {
+	top: calc(var(--posY, 50%) + var(--moveY, 1%) * var(--localMouseY, 0) * var(--sign, 1));
+	left: calc(var(--posX, 50%) + var(--moveX, 1%) * var(--localMouseX, 0) * var(--sign, 1));
+}
+
+.img-rect {
+	width: var(--size, 50%);
+	height: var(--size, 50%);
+	border-radius: 32px;
+	z-index: var(--layer, 0);
+}
+
+.img-dot {
+	width: var(--size, 10%);
+	border-radius: 50%;
+	aspect-ratio: 1/1;
+	z-index: var(--layer, 2);
+}
+
+.img-decoration-container > .content:not(.image-container) {
+	width: fit-content;
+}

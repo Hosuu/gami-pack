@@ -25,20 +25,23 @@
 				<div class="image-container rounded">
 					<img src="placeholder.png" alt="" />
 				</div>
-				<div class="img-rect" style="left: 80%; top: 20%"></div>
-				<div class="img-dot" style="top: -8%; left: -10%; width: 8%"></div>
-				<div class="img-dot" style="bottom: -4%; left: -4%; width: 10%"></div>
+				<div class="img-rect" style="--posX: 80%; --posY: 20%; --size: 50%"></div>
+				<div class="img-dot" style="--posX: -10%; --posY: -8%; --size: 8%"></div>
+				<div class="img-dot" style="--posX: -4%; --posY: 104%; --size: 10%"></div>
 			</div>
 		</section>
 
-		<section id="about-us" class="flex container full-width">
+		<section id="about-us" class="flex container full-width" animate-in>
 			<div class="img-decoration-container">
 				<div class="image-container fill rounded">
 					<img src="placeholder.png" alt="" />
 				</div>
-				<div class="img-dot" style="top: 50%; left: 50%; height: 120%; z-index: 0"></div>
-				<div class="img-dot" style="bottom: -20%; left: 5%; width: 10%"></div>
-				<div class="img-dot" style="top: -25%; right: -5%; width: 15%"></div>
+				<div
+					class="img-dot local"
+					style="--posX: 50%; --posY: 50%; --size: 85%; --layer: 0"
+				></div>
+				<div class="img-dot local" style="--posX: 5%; --posY: 80%; --size: 10%"></div>
+				<div class="img-dot local" style="--posX: 95%; --posY: -25%; --size: 15%"></div>
 			</div>
 			<div class="flex column fill" style="gap: 0.5rem; align-items: flex-start">
 				<p class="fs-3">O nas</p>
@@ -59,28 +62,28 @@
 		</section>
 
 		<section id="stats" class="flex no-gap even container full-width">
-			<div class="flex column no-gap">
+			<div class="flex column no-gap" animate-in>
 				<p class="fs-4" animate-number target="15">0</p>
 				<p class="text-center">Lat doświadczenia</p>
 			</div>
-			<div class="flex column no-gap">
+			<div class="flex column no-gap" animate-in>
 				<p class="fs-4" animate-number target="220">0</p>
 				<p class="text-center">Zadowolonych Klientów</p>
 			</div>
 		</section>
 
 		<section id="why-us" class="flex column container full-width">
-			<p class="fs-4">Dlaczego my?</p>
-			<div class="image-container"><img src="placeholder.png" alt="" /></div>
+			<p class="fs-4" animate-in>Dlaczego my?</p>
+			<div class="image-container" animate-in><img src="placeholder.png" alt="" /></div>
 			<div class="flex even cards">
-				<div class="card">
+				<div class="card" animate-in>
 					<div class="label flex"><img src="check_mark.svg" alt="" />Szeroki wybór</div>
 					<p>
 						Oferujemy szeroki wybór wysokiej jakości opakowań kartonowych, co daje
 						klientom możliwość znalezienia idealnego rozwiązania dla swoich potrzeb.
 					</p>
 				</div>
-				<div class="card">
+				<div class="card" animate-in>
 					<div class="label flex">
 						<img src="check_mark.svg" alt="" />Estetyka wykonania
 					</div>
@@ -89,7 +92,7 @@
 						atrakcyjną prezentację swoich produktów.
 					</p>
 				</div>
-				<div class="card">
+				<div class="card" animate-in>
 					<div class="label flex">
 						<img src="check_mark.svg" alt="" />Kompleksowa obsługa klienta
 					</div>
@@ -101,7 +104,7 @@
 			</div>
 		</section>
 
-		<section id="contact-us" class="flex container even full-width">
+		<section id="contact-us" class="flex container even full-width" animate-in>
 			<div class="image-container"><img src="placeholder.png" alt="" /></div>
 			<a href="contact" class="button">Skontaktuj się z nami!</a>
 		</section>

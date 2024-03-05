@@ -19,7 +19,7 @@
 			<div class="fs-4">Oferta</div>
 		</section>
 
-		<section id="offer-info" class="flex container full-width">
+		<section id="offer-info" class="flex container full-width" animate-in>
 			<div class="flex column fill" style="gap: 0.5rem; align-items: flex-start">
 				<p>
 					Nasze szesnastoletnie doświadczenie pozwoliło nam na rozwój dzięki któremu
@@ -33,14 +33,30 @@
 				<div class="image-container rounded">
 					<img src="placeholder.png" alt="" />
 				</div>
-				<div class="img-dot" style="top: 12%; left: -8%; width: 5%"></div>
-				<div class="img-dot" style="top: 35%; left: 70%; height: 120%; z-index: 0"></div>
-				<div class="img-dot" style="bottom: -10%; left: -5%; width: 15%"></div>
+				<div
+					class="img-dot"
+					style="
+						--posX: 70%;
+						--moveX: 0.25%;
+						--posY: 35%;
+						--moveY: 0.25%;
+						--size: 85%;
+						--layer: 0;
+					"
+				></div>
+				<div
+					class="img-dot"
+					style="--posX: 0%; --moveX: 0%; --posY: 12%; --moveY: 0%; --size: 5%"
+				></div>
+				<div
+					class="img-dot"
+					style="--posX: -5%; --moveX: 1%; --posY: 100%; --moveY: 1%; --size: 15%"
+				></div>
 			</div>
 		</section>
 
 		<section id="offer" class="flex container even full-width">
-			<div class="flex column offer-card">
+			<div class="flex column offer-card" animate-in>
 				<div class="fs-15">Opakowania standardowe</div>
 				<div class="img-decoration-container">
 					<div class="image-container rounded">
@@ -49,7 +65,7 @@
 				</div>
 				<a href="#" class="button" style="padding: 0.5rem 1rem">Sprawdź ofertę</a>
 			</div>
-			<div class="flex column offer-card">
+			<div class="flex column offer-card" animate-in>
 				<div class="fs-15">Opakowania wielkogabarytowe</div>
 				<div class="img-decoration-container">
 					<div class="image-container rounded">
@@ -60,7 +76,7 @@
 			</div>
 		</section>
 		<section id="offer" class="flex container even full-width">
-			<div class="flex column offer-card">
+			<div class="flex column offer-card" animate-in>
 				<div class="fs-15">Opakowania specjalistyczne</div>
 				<div class="img-decoration-container">
 					<div class="image-container rounded">
@@ -69,7 +85,7 @@
 				</div>
 				<a href="#" class="button" style="padding: 0.5rem 1rem">Sprawdź ofertę</a>
 			</div>
-			<div class="flex column offer-card">
+			<div class="flex column offer-card" animate-in>
 				<div class="fs-15">Opakowania e-commerce</div>
 				<div class="img-decoration-container">
 					<div class="image-container rounded">

@@ -1,4 +1,5 @@
 @import url('./utility.css');
+@import url('./img-decorations.css');
 
 *,
 *::before,
@@ -42,14 +43,30 @@ body {
 	flex-direction: column;
 }
 
-/* UTLITY CLASSES */
-
 #landing {
 	min-height: 100vh;
 }
 
 section {
 	padding: 64px 0;
+}
+
+[animate-in] {
+	opacity: 0;
+}
+
+@keyframes appear {
+	from {
+		opacity: 0;
+		translate: 0 30px;
+	}
+	to {
+		opacity: 1;
+		translate: 0 0px;
+	}
+}
+[animating] {
+	animation: appear 0.75s ease-out;
 }
 
 .button {
@@ -69,26 +86,26 @@ section {
 	scale: 1.05;
 }
 
-.fs-4,
-.fs-3,
-.fs-2,
 .fs-15,
+.fs-2,
+.fs-3,
+.fs-4,
 header a.active {
 	color: var(--accent);
 	text-align: center;
 }
 
-.fs-4 {
-	font-size: 4rem;
-}
-.fs-3 {
-	font-size: 3rem;
+.fs-15 {
+	font-size: 1.5rem;
 }
 .fs-2 {
 	font-size: 2rem;
 }
-.fs-15 {
-	font-size: 1.5rem;
+.fs-3 {
+	font-size: 3rem;
+}
+.fs-4 {
+	font-size: 4rem;
 }
 
 #navbar {
@@ -129,14 +146,6 @@ header a.active {
 	font-size: 2rem;
 }
 
-.img-decoration-container {
-	position: relative;
-}
-
-.img-decoration-container > :not(.image-container) {
-	translate: var(--origin, -50% -50%);
-}
-
 .image-container {
 	overflow: hidden;
 	max-height: 100%;
@@ -149,40 +158,11 @@ header a.active {
 	height: auto;
 	display: block;
 	margin: 0 auto;
-
-	transform-origin: var(--origin-scale, 50% 50%);
-	transition: scale 0.25s ease-out;
-}
-
-.img-decoration-container .image-container:hover > img {
-	scale: 1.1;
-}
-
-.img-rect {
-	position: absolute;
-	width: 50%;
-	height: 50%;
-	background: var(--accent);
-	border-radius: 32px;
-	z-index: 0;
 }
 
 .offer-card {
 	gap: 1rem;
 	max-width: 400px;
-}
-
-.img-dot {
-	width: fit-content;
-	display: grid;
-	place-content: center;
-	padding: 8px;
-	border-radius: 50%;
-	text-align: center;
-	aspect-ratio: 1/1;
-	background: var(--accent);
-	position: absolute;
-	z-index: 2;
 }
 
 .hero-text {
@@ -291,6 +271,7 @@ form .button {
 	#stats,
 	#contact-us,
 	#mission,
+	#offer-info,
 	#offer {
 		flex-direction: column;
 	}
